@@ -21,7 +21,7 @@ They can be used in published videos and redistributed with the skill.
 Regenerate or make variations: `uv run --with numpy --with scipy python scripts/compose_music.py --out <dir> --style all [--seed N]`
 (seed 7 reproduces these files).
 
-## From /brag
+## From ende.app
 
 - `happy-beats-business-moves-vol-1-by-ende-dot-app.mp3` (2:44)
 - `happy-beats-business-moves-vol-9-by-ende-dot-app.mp3` (1:54)
@@ -29,8 +29,8 @@ Regenerate or make variations: `uv run --with numpy --with scipy python scripts/
 - `happy-beats-business-moves-vol-11-by-ende-dot-app.mp3` (1:28)
 - `happy-beats-business-moves-vol-12-by-ende-dot-app.mp3` (1:58)
 
-Source: [ende.app](https://ende.app/en) "Happy Beats / Business Moves" series, bundled with the /brag skill. Verify the
-exact license terms before publishing externally.
+Source: [ende.app](https://ende.app/en) "Happy Beats / Business Moves" series. Verify the exact license terms before
+publishing externally.
 
 ## Cue files
 

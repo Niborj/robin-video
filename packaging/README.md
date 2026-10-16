@@ -8,7 +8,7 @@ before/after splits, diagrams, real pages from your document), music, optional n
 frame and ready-to-paste post copy. Every video passes a Cato brand check (palette, Archivo/Inter, official logos,
 approved product names, Cato voice) before it renders.
 
-Version 1.1 · October 2026 · built on the `/brag` workflow and HyperFrames.
+Version 1.1 · October 2026 · built on HyperFrames.
 
 **New in 1.1:** 15 music beds in distinct styles. Ten are original tracks composed for Robin-Video (tech pulse,
 minimal data, calm suspense, cinematic rise, ambient, hopeful piano, lo-fi, playful mallets, bright corporate, deep
@@ -67,7 +67,7 @@ In Claude Code, from the folder where you want the output:
 | `--count` | several distinct videos from one document | 1 |
 | `--voice` | narration with burned-in captions | off |
 | `--cta`, `--url` | end-card call to action and link | inferred / catonetworks.com |
-| `--music` | `pulse`, `minimal`, `focus`, `cinematic`, `ambient`, `piano`, `lofi`, `mallets`, `uplift`, `deep` (or a /brag bed) | picked for the story |
+| `--music` | `pulse`, `minimal`, `focus`, `cinematic`, `ambient`, `piano`, `lofi`, `mallets`, `uplift`, `deep` (or an ende.app bed) | picked for the story |
 | `--no-music`, `--no-sfx` | turn audio layers off | on |
 
 You can also just ask: "Make a LinkedIn video from this report, vertical, with narration."
@@ -89,8 +89,8 @@ Results land in `robin-video-output/<document-name>/`:
 - **Product names:** only approved Cato product names pass the brand check; anything else is flagged for you to confirm
   with Product Marketing.
 - **Music:** the ten `robin-*` tracks are original and royalty-free, so use them anywhere. The five
-  "Happy Beats / Business Moves" tracks (`vol-*`, ende.app) come from the `/brag` skill: confirm their license before
-  publishing externally. Run `python3 ~/.claude/skills/robin-video/scripts/kit.py music` to list every bed, and
+  "Happy Beats / Business Moves" tracks (`vol-*`) are by ende.app: confirm their license before publishing
+  externally. Run `python3 ~/.claude/skills/robin-video/scripts/kit.py music` to list every bed, and
   `scripts/compose_music.py --style <name> --seed <n>` (with `uv run --with numpy --with scipy`) for new variations.
 - **Slide images:** PowerPoint slides are rebuilt in motion from their text, charts and images. To show slides as
   pictures, also give it a PDF export of the deck (or install LibreOffice).

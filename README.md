@@ -5,9 +5,8 @@ A Claude Code skill that turns a document into a short, animated, Cato-branded s
 Upload a PDF, PowerPoint, Word document, text/Markdown file, HTML page, CSV or images and say `/robin-video`. You get
 a LinkedIn-ready MP4 with a scroll-stopping hook, kinetic type, motion graphics (drawn Cato rings, count-ups, data
 cards, before/after splits, connect diagrams, real pages from your document), ring-iris transitions, music and SFX,
-optional narration with burned-in captions, a poster frame, and the post copy. It is the `/brag` workflow (plan →
-storyboard → HyperFrames → check → render → poster → share copy) re-aimed from codebases at documents and social feeds,
-and locked to the Cato brand.
+optional narration with burned-in captions, a poster frame, and the post copy. The workflow runs plan → storyboard →
+HyperFrames → check → render → poster → share copy, built for documents and social feeds and locked to the Cato brand.
 
 ## Use it
 
@@ -58,8 +57,8 @@ robin-video/
   scripts/                 ingest.py, kit.py (+ scenes.py), brand_check.py, voice.py, deliver.py, hf, tests
   assets/brand/            cato-brand.json, logos, fonts, icons
   assets/kit/              cato.css, cato-motion.js
-  assets/music/            15 beds with beat/section cues: 10 original (compose_music.py), 5 from /brag
-  assets/sfx/              CC0 SFX (from /brag)
+  assets/music/            15 beds with beat/section cues: 10 original (compose_music.py), 5 from ende.app
+  assets/sfx/              CC0 SFX
   assets/vendor/           GSAP (local, no CDN at render time)
   examples/                sample source document and the archetype gallery storyboard
 test-runs/                 end-to-end test outputs (local only)
@@ -73,7 +72,7 @@ Tests: `uv run --project robin-video/scripts python robin-video/scripts/test_rob
   updates, change `assets/brand/cato-brand.json`, `assets/kit/cato.css` and `references/cato-brand.md` together.
 - Music: ten original tracks are composed in code by `scripts/compose_music.py` (owned, royalty-free; regenerate with
   `uv run --with numpy --with scipy python robin-video/scripts/compose_music.py --out robin-video/assets/music`). The
-  five `vol-*` tracks come from `/brag` ("Happy Beats / Business Moves", ende.app); confirm their license before
-  publishing externally.
+  five `vol-*` tracks are "Happy Beats / Business Moves" by ende.app; confirm their license before publishing
+  externally.
 - Videos made from internal documents stop at a clearance gate: Claude confirms the content is cleared for public
   social media and anonymizes customer and personal data.
