@@ -1,0 +1,533 @@
+{
+ "schemaVersion": 1,
+ "source": {
+  "filename": "robin-pulse.mp3",
+  "trackStem": "robin-pulse",
+  "generator": "robin-video compose_music.py"
+ },
+ "duration": 56.949,
+ "tempo": 118.0,
+ "analysis": {
+  "method": "exact composition grid",
+  "sampleRate": 44100
+ },
+ "scoring": {
+  "intensityFormula": "0.8*normalized_rms_after_beat + 0.2*downbeat",
+  "note": "strongCues = section starts (kind strong_beat, intensity 1.0) and 4-bar phrase starts (kind phrase)."
+ },
+ "sections": [
+  {
+   "name": "intro",
+   "start": 0.0,
+   "bars": 4
+  },
+  {
+   "name": "build",
+   "start": 8.136,
+   "bars": 4
+  },
+  {
+   "name": "main",
+   "start": 16.271,
+   "bars": 8
+  },
+  {
+   "name": "lift",
+   "start": 32.542,
+   "bars": 8
+  },
+  {
+   "name": "outro",
+   "start": 48.814,
+   "bars": 4
+  }
+ ],
+ "beats": [
+  {
+   "time": 0.0,
+   "intensity": 0.3333
+  },
+  {
+   "time": 0.5085,
+   "intensity": 0.2383
+  },
+  {
+   "time": 1.0169,
+   "intensity": 0.2549
+  },
+  {
+   "time": 1.5254,
+   "intensity": 0.2189
+  },
+  {
+   "time": 2.0339,
+   "intensity": 0.5251
+  },
+  {
+   "time": 2.5424,
+   "intensity": 0.3449
+  },
+  {
+   "time": 3.0508,
+   "intensity": 0.3374
+  },
+  {
+   "time": 3.5593,
+   "intensity": 0.2652
+  },
+  {
+   "time": 4.0678,
+   "intensity": 0.446
+  },
+  {
+   "time": 4.5763,
+   "intensity": 0.2886
+  },
+  {
+   "time": 5.0847,
+   "intensity": 0.2839
+  },
+  {
+   "time": 5.5932,
+   "intensity": 0.3228
+  },
+  {
+   "time": 6.1017,
+   "intensity": 0.4629
+  },
+  {
+   "time": 6.6102,
+   "intensity": 0.2683
+  },
+  {
+   "time": 7.1186,
+   "intensity": 0.2572
+  },
+  {
+   "time": 7.6271,
+   "intensity": 0.1756
+  },
+  {
+   "time": 8.1356,
+   "intensity": 1.0
+  },
+  {
+   "time": 8.6441,
+   "intensity": 0.8026
+  },
+  {
+   "time": 9.1525,
+   "intensity": 0.7757
+  },
+  {
+   "time": 9.661,
+   "intensity": 0.7486
+  },
+  {
+   "time": 10.1695,
+   "intensity": 0.9392
+  },
+  {
+   "time": 10.678,
+   "intensity": 0.75
+  },
+  {
+   "time": 11.1864,
+   "intensity": 0.7413
+  },
+  {
+   "time": 11.6949,
+   "intensity": 0.7531
+  },
+  {
+   "time": 12.2034,
+   "intensity": 0.9566
+  },
+  {
+   "time": 12.7119,
+   "intensity": 0.7434
+  },
+  {
+   "time": 13.2203,
+   "intensity": 0.7572
+  },
+  {
+   "time": 13.7288,
+   "intensity": 0.7408
+  },
+  {
+   "time": 14.2373,
+   "intensity": 0.9504
+  },
+  {
+   "time": 14.7458,
+   "intensity": 0.751
+  },
+  {
+   "time": 15.2542,
+   "intensity": 0.7517
+  },
+  {
+   "time": 15.7627,
+   "intensity": 0.7463
+  },
+  {
+   "time": 16.2712,
+   "intensity": 0.9616
+  },
+  {
+   "time": 16.7797,
+   "intensity": 0.7721
+  },
+  {
+   "time": 17.2881,
+   "intensity": 0.7583
+  },
+  {
+   "time": 17.7966,
+   "intensity": 0.7719
+  },
+  {
+   "time": 18.3051,
+   "intensity": 0.943
+  },
+  {
+   "time": 18.8136,
+   "intensity": 0.7867
+  },
+  {
+   "time": 19.322,
+   "intensity": 0.735
+  },
+  {
+   "time": 19.8305,
+   "intensity": 0.7815
+  },
+  {
+   "time": 20.339,
+   "intensity": 0.9609
+  },
+  {
+   "time": 20.8475,
+   "intensity": 0.7716
+  },
+  {
+   "time": 21.3559,
+   "intensity": 0.7555
+  },
+  {
+   "time": 21.8644,
+   "intensity": 0.7743
+  },
+  {
+   "time": 22.3729,
+   "intensity": 0.944
+  },
+  {
+   "time": 22.8814,
+   "intensity": 0.7727
+  },
+  {
+   "time": 23.3898,
+   "intensity": 0.7458
+  },
+  {
+   "time": 23.8983,
+   "intensity": 0.7739
+  },
+  {
+   "time": 24.4068,
+   "intensity": 0.9504
+  },
+  {
+   "time": 24.9153,
+   "intensity": 0.7762
+  },
+  {
+   "time": 25.4237,
+   "intensity": 0.7529
+  },
+  {
+   "time": 25.9322,
+   "intensity": 0.7703
+  },
+  {
+   "time": 26.4407,
+   "intensity": 0.9369
+  },
+  {
+   "time": 26.9492,
+   "intensity": 0.7714
+  },
+  {
+   "time": 27.4576,
+   "intensity": 0.7399
+  },
+  {
+   "time": 27.9661,
+   "intensity": 0.7741
+  },
+  {
+   "time": 28.4746,
+   "intensity": 0.9593
+  },
+  {
+   "time": 28.9831,
+   "intensity": 0.7781
+  },
+  {
+   "time": 29.4915,
+   "intensity": 0.7588
+  },
+  {
+   "time": 30.0,
+   "intensity": 0.7728
+  },
+  {
+   "time": 30.5085,
+   "intensity": 0.9435
+  },
+  {
+   "time": 31.0169,
+   "intensity": 0.7721
+  },
+  {
+   "time": 31.5254,
+   "intensity": 0.7448
+  },
+  {
+   "time": 32.0339,
+   "intensity": 0.781
+  },
+  {
+   "time": 32.5424,
+   "intensity": 0.9592
+  },
+  {
+   "time": 33.0508,
+   "intensity": 0.7806
+  },
+  {
+   "time": 33.5593,
+   "intensity": 0.762
+  },
+  {
+   "time": 34.0678,
+   "intensity": 0.7908
+  },
+  {
+   "time": 34.5763,
+   "intensity": 0.9541
+  },
+  {
+   "time": 35.0847,
+   "intensity": 0.7824
+  },
+  {
+   "time": 35.5932,
+   "intensity": 0.7452
+  },
+  {
+   "time": 36.1017,
+   "intensity": 0.7677
+  },
+  {
+   "time": 36.6102,
+   "intensity": 0.9612
+  },
+  {
+   "time": 37.1186,
+   "intensity": 0.7732
+  },
+  {
+   "time": 37.6271,
+   "intensity": 0.765
+  },
+  {
+   "time": 38.1356,
+   "intensity": 0.7789
+  },
+  {
+   "time": 38.6441,
+   "intensity": 0.957
+  },
+  {
+   "time": 39.1525,
+   "intensity": 0.7744
+  },
+  {
+   "time": 39.661,
+   "intensity": 0.7476
+  },
+  {
+   "time": 40.1695,
+   "intensity": 0.7768
+  },
+  {
+   "time": 40.678,
+   "intensity": 0.958
+  },
+  {
+   "time": 41.1864,
+   "intensity": 0.7846
+  },
+  {
+   "time": 41.6949,
+   "intensity": 0.7601
+  },
+  {
+   "time": 42.2034,
+   "intensity": 0.7864
+  },
+  {
+   "time": 42.7119,
+   "intensity": 0.9565
+  },
+  {
+   "time": 43.2203,
+   "intensity": 0.7783
+  },
+  {
+   "time": 43.7288,
+   "intensity": 0.7413
+  },
+  {
+   "time": 44.2373,
+   "intensity": 0.7702
+  },
+  {
+   "time": 44.7458,
+   "intensity": 0.9582
+  },
+  {
+   "time": 45.2542,
+   "intensity": 0.7768
+  },
+  {
+   "time": 45.7627,
+   "intensity": 0.7655
+  },
+  {
+   "time": 46.2712,
+   "intensity": 0.7849
+  },
+  {
+   "time": 46.7797,
+   "intensity": 0.9612
+  },
+  {
+   "time": 47.2881,
+   "intensity": 0.7874
+  },
+  {
+   "time": 47.7966,
+   "intensity": 0.7494
+  },
+  {
+   "time": 48.3051,
+   "intensity": 0.7703
+  },
+  {
+   "time": 48.8136,
+   "intensity": 0.9487
+  },
+  {
+   "time": 49.322,
+   "intensity": 0.7548
+  },
+  {
+   "time": 49.8305,
+   "intensity": 0.747
+  },
+  {
+   "time": 50.339,
+   "intensity": 0.7499
+  },
+  {
+   "time": 50.8475,
+   "intensity": 0.9465
+  },
+  {
+   "time": 51.3559,
+   "intensity": 0.7584
+  },
+  {
+   "time": 51.8644,
+   "intensity": 0.7543
+  },
+  {
+   "time": 52.3729,
+   "intensity": 0.7513
+  },
+  {
+   "time": 52.8814,
+   "intensity": 0.9518
+  },
+  {
+   "time": 53.3898,
+   "intensity": 0.7533
+  },
+  {
+   "time": 53.8983,
+   "intensity": 0.7587
+  },
+  {
+   "time": 54.4068,
+   "intensity": 0.7749
+  },
+  {
+   "time": 54.9153,
+   "intensity": 1.0
+  },
+  {
+   "time": 55.4237,
+   "intensity": 0.4908
+  },
+  {
+   "time": 55.9322,
+   "intensity": 0.2184
+  },
+  {
+   "time": 56.4407,
+   "intensity": 0.04
+  }
+ ],
+ "strongCues": [
+  {
+   "time": 8.136,
+   "intensity": 1.0,
+   "kind": "strong_beat",
+   "section": "build"
+  },
+  {
+   "time": 16.271,
+   "intensity": 1.0,
+   "kind": "strong_beat",
+   "section": "main"
+  },
+  {
+   "time": 24.4066,
+   "intensity": 0.9376,
+   "kind": "phrase",
+   "section": "main"
+  },
+  {
+   "time": 32.542,
+   "intensity": 1.0,
+   "kind": "strong_beat",
+   "section": "lift"
+  },
+  {
+   "time": 40.6776,
+   "intensity": 0.9396,
+   "kind": "phrase",
+   "section": "lift"
+  },
+  {
+   "time": 48.814,
+   "intensity": 1.0,
+   "kind": "strong_beat",
+   "section": "outro"
+  }
+ ]
+}

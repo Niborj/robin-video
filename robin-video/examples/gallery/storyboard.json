@@ -1,0 +1,19 @@
+{
+  "title": "Archetype gallery",
+  "format": "portrait",
+  "music": "vol-12",
+  "transition": "iris",
+  "overlap": 0.85,
+  "scenes": [
+    {"id": "hook", "archetype": "hook", "duration": 4.2, "eyebrow": "Sample brief · AI adoption", "headline": "AI moves fast. [Security has to see first.]"},
+    {"id": "statement", "archetype": "statement", "duration": 3.6, "headline": "Most AI use starts [without IT.]"},
+    {"id": "stat", "archetype": "stat", "duration": 5, "value": "71%", "label": "of employees used an AI tool that IT had not approved", "source": "Illustrative sample data"},
+    {"id": "cards", "archetype": "cards", "duration": 5.2, "headline": "[30 days] of AI traffic", "cards": [{"value": "77", "label": "AI applications detected"}, {"value": "30,254", "label": "AI interactions acted on by policy"}]},
+    {"id": "compare", "archetype": "compare", "duration": 5.2, "headline": "The world [has changed]", "before": {"title": "Human era", "rows": [{"icon": "users", "text": "Hundreds of actions"}, {"icon": "shield", "text": "Human decisions"}]}, "after": {"title": "Agentic era", "rows": [{"icon": "bot", "text": "Millions of actions"}, {"icon": "shield-check", "text": "Autonomous decisions"}]}},
+    {"id": "moves", "archetype": "list", "duration": 5.2, "eyebrow": "What to do next", "headline": "Three moves for [safe AI adoption]", "items": ["See every AI app and agent", "Decide what the business approves", "Enforce one policy everywhere"]},
+    {"id": "quote", "archetype": "quote", "duration": 5.2, "quote": "Visibility came first. Once we could see the AI traffic, the policy conversation took a day, not a quarter.", "name": "Sample CISO", "role": "Illustrative quote"},
+    {"id": "page", "archetype": "doc", "duration": 5.2, "headline": "Where the AI traffic goes", "image": "source/pages/p-02.png", "focus": [0.06, 0.27, 0.82, 0.25], "tag": "62% to web AI assistants"},
+    {"id": "flow", "archetype": "flow", "duration": 5, "headline": "One policy, [every path]", "nodes": [{"label": "Users and agents", "icon": "users"}, {"label": "Cato SASE Platform", "icon": "shield-check", "hub": true}, {"label": "AI apps", "icon": "cloud"}]},
+    {"id": "end", "archetype": "end", "duration": 3.4, "line": "See what your AI traffic is doing", "cta": "Read the sample brief", "url": "catonetworks.com"}
+  ]
+}

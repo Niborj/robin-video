@@ -1,0 +1,233 @@
+/* Robin-Video · Cato brand system for social video (HyperFrames).
+   Source of truth: Cato Brand Hub tokens (assets/brand/cato-brand.json) and the Cato Visual Style R101
+   social, presentation and dark-mode examples. Every color here is a palette color or a palette color
+   with alpha; brand_check.py rejects anything else. Fonts are local files (HyperFrames needs @font-face). */
+
+@font-face { font-family: Archivo; src: url('fonts/Archivo-Latin.woff2') format('woff2'); font-weight: 100 900; }
+@font-face { font-family: Archivo; src: url('fonts/Archivo-LatinExt.woff2') format('woff2'); font-weight: 100 900;
+  unicode-range: U+0100-02BA, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: Inter; src: url('fonts/Inter-Regular.woff') format('woff'); font-weight: 400; }
+@font-face { font-family: Inter; src: url('fonts/Inter-Bold.woff') format('woff'); font-weight: 700; }
+
+:root {
+  /* Primary */
+  --cato-green: #128461; --highlight: #00FFCC; --white: #FFFFFF; --black: #000000;
+  /* Greens */
+  --moss: #006F53; --grass: #005543; --forest: #003E34; --pine: #002C28;
+  /* Secondary: meaning only, never competing with the greens */
+  --coral: #FF3749; --sunflower: #FFC820; --light-moss: #7BCF91; --sky: #00D8E0; --plum: #561E9B; --fuchsia: #BF00CC;
+  /* Neutrals */
+  --pale-grey: #F0F0F0; --light-grey: #C8C8C8; --grey: #969696; --medium-grey: #646464; --dark-grey: #464646;
+  /* Official gradients (125°) */
+  --grad-green: linear-gradient(125deg, #128461 0%, #00392F 100%);
+  --grad-dark: linear-gradient(125deg, #474747 0%, #000000 100%);
+  /* Type */
+  --display: Archivo, Inter, sans-serif;
+  --body: Inter, sans-serif;
+  /* Type scale. Every format is 1080 px on its short side, so one scale serves them all. */
+  --t-mega: 260px; --t-hero: 148px; --t-h1: 112px; --t-h2: 84px; --t-h3: 60px;
+  --t-lead: 46px; --t-body: 38px; --t-small: 30px; --t-eyebrow: 28px;
+  /* Shape */
+  --radius: 36px; --radius-sm: 22px; --hairline: 2px;
+  /* Safe area (overridden per format below) */
+  --pad-x: 84px; --pad-top: 88px; --pad-bottom: 96px; --logo-w: 210px;
+}
+/* Formats. Add the class to #root: fmt-portrait (1080x1350, LinkedIn feed default), fmt-square (1080x1080),
+   fmt-vertical (1080x1920, Reels/Shorts/TikTok/LinkedIn vertical), fmt-landscape (1920x1080). */
+.fmt-square { --pad-x: 80px; --pad-top: 80px; --pad-bottom: 84px; --t-hero: 136px; --t-h1: 104px; --logo-clear: 96px; }
+.fmt-vertical { --pad-x: 96px; --pad-top: 250px; --pad-bottom: 430px; --t-hero: 156px; --logo-w: 230px; }
+.fmt-landscape { --pad-x: 120px; --pad-top: 90px; --pad-bottom: 96px; --t-hero: 140px; --logo-w: 220px; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: var(--pine); }
+/* The host root (index.html) carries .cs-root and a .fmt-* class; scenes are sub-compositions mounted inside it. */
+.cs-root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--pine); }
+.cs-root, .cs-scene { font-family: var(--body); color: var(--white); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; font-kerning: normal; }
+
+/* ---------------------------------------------------------------- scenes */
+.cs-scene { position: absolute; inset: 0; overflow: hidden; }
+.cs-frame { position: absolute; inset: 0; overflow: hidden; }           /* animate this, never the .clip */
+.cs-safe { position: absolute; left: var(--pad-x); right: var(--pad-x); top: var(--pad-top); bottom: var(--pad-bottom);
+  display: flex; flex-direction: column; }
+.cs-safe.is-bottom { justify-content: flex-end; }
+.cs-safe.is-center { justify-content: center; }
+.cs-safe.is-center-x { align-items: center; text-align: center; }
+.cs-safe.is-top { padding-top: calc(var(--logo-w) * 0.4 + 72px); }  /* content starts below the corner logo */
+/* Square is short: centered content under a corner logo centers in the space below the logo, so tall content
+   (a stat ring, a list) never reaches it. */
+.fmt-square .logo ~ .cs-safe.is-center { top: calc(var(--pad-top) + var(--logo-clear)); }
+
+/* Backgrounds: solid greens, the green gradient, the dark gradient, or light neutrals */
+.bg-green { background: var(--grad-green); }
+.bg-dark { background: var(--grad-dark); }
+.bg-pine { background: var(--pine); }
+.bg-forest { background: var(--forest); }
+.bg-grass { background: var(--grass); }
+.bg-cato { background: var(--cato-green); }
+.bg-white { background: var(--white); color: var(--black); }
+.bg-pale { background: var(--pale-grey); color: var(--black); }
+.is-light { color: var(--black); }
+
+/* ---------------------------------------------------------------- the Ring (flat 2D only) */
+.ring { position: absolute; display: block; pointer-events: none; overflow: visible; }
+.ring circle { fill: none; }
+.ring .ring-disc { fill: currentColor; stroke: none; }
+.ring--super { color: var(--cato-green); opacity: 0.55; }             /* tone-on-tone backdrop on pine/forest */
+.bg-green .ring--super { color: var(--forest); opacity: 0.5; }
+.bg-cato .ring--super { color: var(--moss); opacity: 0.6; }
+.bg-dark .ring--super { color: var(--dark-grey); opacity: 0.5; }
+.bg-white .ring--super, .bg-pale .ring--super { color: var(--cato-green); opacity: 0.12; }
+.ring--accent { color: var(--highlight); }
+.ring--green { color: var(--cato-green); }
+.ring--white { color: var(--white); }
+
+/* ---------------------------------------------------------------- logo */
+.logo { position: absolute; left: var(--pad-x); top: calc(var(--pad-top) - 8px); width: var(--logo-w); height: auto; display: block; }
+.fmt-vertical .logo { top: calc(var(--pad-top) - 120px); }
+.logo-inline { position: relative; display: block; width: calc(var(--logo-w) * 1.7); height: auto; flex: none; }
+.is-center-x .logo-inline { align-self: center; }
+
+/* ---------------------------------------------------------------- type */
+.eyebrow { font-family: var(--body); font-weight: 700; font-size: var(--t-eyebrow); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--highlight); line-height: 1.2; }
+.is-light .eyebrow, .bg-white .eyebrow, .bg-pale .eyebrow { color: var(--moss); }
+.headline { font-family: var(--display); font-weight: 500; font-size: var(--t-h1); line-height: 1.02; letter-spacing: -0.02em; }
+.headline.is-hero { font-size: var(--t-hero); line-height: 0.98; letter-spacing: -0.03em; }
+.headline.is-h2 { font-size: var(--t-h2); line-height: 1.05; }
+.headline.is-h3 { font-size: var(--t-h3); line-height: 1.08; letter-spacing: -0.01em; }
+.headline.is-fit .line { display: block; white-space: nowrap; }     /* kit.py fitted the breaks and the size */
+/* Wrapped copy breaks into even lines (no single-word orphans); fitted hero lines are nowrap and unaffected. */
+.headline, .lead, .quote-text, .list .item > span, .compare .row > span, .card-label, .card-note, .node-label { text-wrap: balance; }
+.lead { font-family: var(--body); font-weight: 400; font-size: var(--t-lead); line-height: 1.32; }
+.body { font-family: var(--body); font-weight: 400; font-size: var(--t-body); line-height: 1.4; }
+.small { font-family: var(--body); font-weight: 400; font-size: var(--t-small); line-height: 1.35; color: var(--light-grey); }
+.is-light .small, .bg-white .small, .bg-pale .small { color: var(--dark-grey); }
+.strong { font-weight: 700; }
+.hl { color: var(--highlight); }                                      /* accent key words, selectively */
+.is-light .hl, .bg-white .hl, .bg-pale .hl { color: var(--cato-green); }
+.muted { color: var(--light-grey); }
+.gap-xs { height: 16px; flex: none; } .gap-s { height: 28px; flex: none; } .gap-m { height: 48px; flex: none; } .gap-l { height: 80px; flex: none; }
+.measure { max-width: 900px; } .fmt-landscape .measure { max-width: 1250px; }
+
+/* Word masks made by CatoMotion.split(): each word rises inside its own clip */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 0.02em 0.14em; margin: 0 -0.02em -0.14em; }
+.w > i { display: inline-block; font-style: normal; }
+
+/* ---------------------------------------------------------------- stat */
+.stat { font-family: var(--display); font-weight: 500; font-size: calc(var(--fs, var(--t-mega)) * var(--ring-k, 1)); line-height: 0.9; letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums; color: var(--highlight); white-space: nowrap; }
+.is-light .stat, .bg-white .stat, .bg-pale .stat { color: var(--cato-green); }
+.stat .unit { font-size: 0.5em; letter-spacing: -0.02em; margin-left: 0.04em; }
+.stat-ring { position: relative; width: 760px; height: 760px; flex: none; display: grid; place-items: center; }
+.stat-ring > .ring { inset: 0; width: 100%; height: 100%; }
+.stat-ring .stat { position: relative; }
+.fmt-landscape .stat-ring { width: 600px; height: 600px; }
+.fmt-square .stat-ring { width: 540px; height: 540px; --ring-k: 0.9; }   /* --ring-k scales the number with the ring */
+
+/* ---------------------------------------------------------------- containers (dark-mode cards) */
+.cards { display: flex; gap: 28px; }
+.cards.is-column { flex-direction: column; }
+.card { position: relative; flex: 1 1 0; border: var(--hairline) solid rgba(255, 255, 255, 0.4); border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.28); padding: 40px 40px 44px; display: flex; flex-direction: column; justify-content: center; }
+.card .card-label { font-family: var(--body); font-weight: 700; font-size: var(--t-small); color: var(--white); }
+.card .card-value { font-family: var(--display); font-weight: 500; font-size: calc(var(--fs, 150px) * var(--card-k, 1)); line-height: 0.95; letter-spacing: -0.03em;
+  color: var(--highlight); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.card .card-note { font-family: var(--body); font-size: var(--t-small); line-height: 1.35; color: var(--light-grey); }
+.card.is-light { background: var(--white); border-color: var(--light-grey); color: var(--black); }
+.card.is-light .card-value { color: var(--cato-green); } .card.is-light .card-label { color: var(--black); } .card.is-light .card-note { color: var(--dark-grey); }
+.card.is-accent { border-color: var(--highlight); }
+.cards.is-grid { display: grid; grid-template-columns: 1fr 1fr; }      /* square with 3–4 cards: two columns */
+.cards.is-grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+/* ---------------------------------------------------------------- compare split */
+.compare { display: flex; border-radius: var(--radius); overflow: hidden; border: var(--hairline) solid rgba(255, 255, 255, 0.4); }
+.fmt-portrait .compare, .fmt-vertical .compare { flex-direction: column; }
+.compare .side { flex: 1 1 0; padding: 40px 44px; display: flex; flex-direction: column; gap: 22px; }
+.compare .side.is-before { background: var(--pale-grey); color: var(--black); }
+.compare .side.is-after { background: linear-gradient(125deg, #003E34 0%, #002C28 100%); color: var(--highlight); }
+.compare .side-title { font-family: var(--display); font-weight: 500; font-size: var(--t-h3); line-height: 1.05; }
+.compare .side.is-before .side-title { color: var(--black); } .compare .side.is-after .side-title { color: var(--white); }
+.compare .row { display: flex; align-items: center; gap: 22px; font-size: var(--t-body); line-height: 1.2; }
+.compare .side.is-before .row { color: var(--dark-grey); }
+.icon { width: 52px; height: 52px; flex: none; display: block; }
+/* Square: side by side on a shared grid, so a title that wraps on one side keeps the rows level on both. */
+.fmt-square .compare { display: grid; grid-template-columns: 1fr 1fr; }
+.fmt-square .compare .side { display: grid; grid-row: span var(--rows, 3); grid-template-rows: subgrid; align-items: center;
+  row-gap: 20px; padding: 34px 36px; }
+.fmt-square .compare .side-title { font-size: 54px; align-self: start; }
+.fmt-square .compare .row { font-size: 34px; gap: 18px; }
+.fmt-square .compare .icon { width: 46px; height: 46px; }
+.compare .side.is-before .icon { color: var(--cato-green); } .compare .side.is-after .icon { color: var(--highlight); }
+
+/* ---------------------------------------------------------------- list with ring bullets */
+.list { display: flex; flex-direction: column; gap: 34px; position: relative; }
+.list .item { display: flex; align-items: center; gap: 32px; font-family: var(--display); font-weight: 500; font-size: var(--t-h3); line-height: 1.1; }
+.list .item .ring { position: relative; width: 64px; height: 64px; flex: none; color: var(--highlight); }
+.is-light .list .item .ring, .bg-white .list .item .ring, .bg-pale .list .item .ring { color: var(--cato-green); }
+.list .rail { position: absolute; left: 31px; top: 32px; bottom: 32px; width: 2px; background: rgba(0, 255, 204, 0.35); transform-origin: top center; }
+
+/* ---------------------------------------------------------------- quote */
+.quote-mark { font-family: var(--display); font-weight: 700; font-size: 220px; line-height: 0.6; color: var(--cato-green); height: 110px; }
+.bg-green .quote-mark, .bg-pine .quote-mark, .bg-dark .quote-mark { color: var(--highlight); }
+.quote-text { font-family: var(--body); font-weight: 700; font-size: 56px; line-height: 1.24; letter-spacing: -0.01em; }
+.attrib-name { font-family: var(--body); font-weight: 700; font-size: var(--t-eyebrow); letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); }
+.bg-green .attrib-name, .bg-pine .attrib-name, .bg-dark .attrib-name { color: var(--highlight); }
+.attrib-role { font-family: var(--body); font-size: var(--t-small); color: var(--dark-grey); }
+.bg-green .attrib-role, .bg-pine .attrib-role, .bg-dark .attrib-role { color: var(--light-grey); }
+.ring-photo { position: absolute; border-radius: 50%; overflow: hidden; border: 14px solid var(--cato-green); }
+.ring-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---------------------------------------------------------------- document showcase ("show the thing") */
+/* A window onto a real page: .doc-card crops, .doc-page (image + focus + tag) is positioned so the focus sits in view. */
+.doc-stage { position: relative; flex: 1 1 auto; min-height: 0; display: flex; justify-content: center; align-items: center; }
+.doc-card { position: relative; flex: none; border-radius: var(--radius-sm); overflow: hidden; background: var(--white);
+  border: var(--hairline) solid rgba(255, 255, 255, 0.5); }
+.doc-page { position: absolute; left: 0; }
+.doc-page img { display: block; width: 100%; height: 100%; }
+.doc-focus { position: absolute; border: 6px solid var(--highlight); border-radius: 18px; }
+.bg-white .doc-focus, .bg-pale .doc-focus { border-color: var(--cato-green); }
+.doc-tag { position: absolute; background: var(--highlight); color: var(--pine); font-family: var(--body); font-weight: 700;
+  font-size: var(--t-small); padding: 12px 22px; border-radius: 999px; white-space: nowrap; }
+
+/* ---------------------------------------------------------------- flow / connect diagram */
+.flow { position: relative; width: 100%; flex: 1 1 auto; min-height: 0; }
+.flow svg.links { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.flow svg.links path { fill: none; stroke: var(--highlight); stroke-width: 4; stroke-linecap: round; }
+.node { position: absolute; width: 200px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.node .node-ring { position: relative; flex: none; width: 150px; height: 150px; display: grid; place-items: center; }
+.node .node-ring .ring { inset: 0; width: 100%; height: 100%; color: var(--highlight); }
+.node .node-ring .icon { width: 60px; height: 60px; color: var(--white); position: relative; }
+.node .node-label { font-family: var(--body); font-weight: 700; font-size: var(--t-small); line-height: 1.2; }
+.node.is-hub .node-ring { width: 230px; height: 230px; } .node.is-hub .node-ring .icon { width: 84px; height: 84px; }
+.node.is-row { flex-direction: row; gap: 40px; text-align: left; }          /* vertical format: label beside the ring */
+.node.is-row .node-label { font-size: var(--t-body); }
+
+/* ---------------------------------------------------------------- CTA / end card */
+.cta { display: inline-flex; align-items: center; gap: 18px; align-self: flex-start; background: var(--highlight); color: var(--pine);
+  font-family: var(--body); font-weight: 700; font-size: var(--t-lead); padding: 26px 44px; border-radius: 999px; }
+.is-center-x .cta { align-self: center; }
+.cta .icon { width: 44px; height: 44px; color: var(--pine); }
+.url { font-family: var(--body); font-weight: 700; font-size: var(--t-body); color: var(--white); letter-spacing: 0.01em; }
+.is-light .url, .bg-white .url { color: var(--moss); }
+
+/* ---------------------------------------------------------------- captions (voice mode) and progress */
+/* With burned-in captions the host root gets .has-captions: scene content moves up and the caption band owns the bottom. */
+.fmt-portrait { --cap-bottom: 92px; } .fmt-square { --cap-bottom: 70px; } .fmt-landscape { --cap-bottom: 70px; } .fmt-vertical { --cap-bottom: 400px; }
+.has-captions.fmt-portrait { --pad-bottom: 290px; }
+/* Square keeps 750 px for content above the caption band: a compact scale so lists, compares, cards and the stat
+   ring fit below the corner logo. */
+.has-captions.fmt-square { --pad-bottom: 250px; --t-h2: 72px; --t-h3: 52px; --t-lead: 40px; --t-body: 34px; }
+.has-captions.fmt-square .gap-l { height: 48px; } .has-captions.fmt-square .gap-m { height: 36px; }
+.has-captions.fmt-square .stat-ring { width: 420px; height: 420px; --ring-k: 0.72; }
+.has-captions.fmt-square .cards { gap: 20px; --card-k: 0.78; } .has-captions.fmt-square .card { padding: 26px 34px 30px; }
+.has-captions.fmt-square .compare .side { padding: 28px 32px; row-gap: 16px; }
+.has-captions.fmt-square .compare .side-title { font-size: 46px; } .has-captions.fmt-square .compare .row { font-size: 32px; }
+.has-captions.fmt-square .list { gap: 26px; }
+.has-captions.fmt-square .quote-text { font-size: 48px; } .has-captions.fmt-square .quote-mark { font-size: 180px; height: 90px; }
+.has-captions.fmt-landscape { --pad-bottom: 230px; }
+.has-captions.fmt-vertical { --pad-bottom: 610px; }
+.captions { position: absolute; left: var(--pad-x); right: var(--pad-x); bottom: var(--cap-bottom); height: 170px; }
+.cap { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: max-content; max-width: 100%; text-align: center; font-family: var(--body); font-weight: 700; font-size: 44px; line-height: 1.25;
+  color: var(--white); background: rgba(0, 44, 40, 0.88); padding: 14px 28px; border-radius: 18px; opacity: 0; }
+.cap .on { color: var(--highlight); }
+.progress { position: absolute; left: 0; bottom: 0; height: 8px; width: 100%; background: var(--highlight); transform-origin: left center; }

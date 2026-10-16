@@ -1,0 +1,156 @@
+{
+  "source": {
+    "name": "Cato Brand Hub",
+    "url": "https://www.catonetworks.com/blog/agent-page/cato-brand-hub/?agent_page_preview=1#overview",
+    "retrievedAt": "2026-10-15",
+    "note": "Machine-readable summary for course runtime, linting and tests. The hub stays canonical; re-check it before major releases. PMS/CMYK values marked TBD on the hub are omitted."
+  },
+  "colors": {
+    "primary": {
+      "catoGreen": "#128461",
+      "highlightGreen": "#00FFCC",
+      "white": "#FFFFFF",
+      "catoGrey": "#7D7D7D",
+      "black": "#000000"
+    },
+    "greens": {
+      "catoGreen": "#128461",
+      "moss": "#006F53",
+      "grass": "#005543",
+      "forest": "#003E34",
+      "darkPine": "#002C28"
+    },
+    "secondary": {
+      "coral": "#FF3749",
+      "sunflower": "#FFC820",
+      "lightMoss": "#7BCF91",
+      "sky": "#00D8E0",
+      "plum": "#561E9B",
+      "fuchsia": "#BF00CC"
+    },
+    "neutrals": {
+      "white": "#FFFFFF",
+      "paleGrey": "#F0F0F0",
+      "lightGrey": "#C8C8C8",
+      "grey": "#969696",
+      "mediumGrey": "#646464",
+      "darkGrey": "#464646",
+      "black": "#000000"
+    },
+    "solidBackgrounds": ["#128461", "#006F53", "#005543", "#000000"],
+    "gradients": {
+      "green": "linear-gradient(125deg, #128461, #00392F)",
+      "dark": "linear-gradient(125deg, #474747, #000000)"
+    },
+    "rules": [
+      "Core greens establish the foundation; secondary colors support emphasis and illustration and never compete with the greens.",
+      "Neutral greys create backgrounds, separation and readable hierarchy with sufficient contrast.",
+      "Gradients add depth and direct focus; they are not decoration.",
+      "Highlight Green belongs on dark surfaces or large display type; it fails contrast as small text on white."
+    ]
+  },
+  "typography": {
+    "headline": {"family": "Archivo", "weight": 500, "use": "Primary message (Archivo Medium)"},
+    "support": {"family": "Inter", "weight": 700, "use": "Supporting hierarchy (Inter Bold)"},
+    "body": {"family": "Inter", "weight": 400, "use": "Readable body copy (Inter Regular)"},
+    "eyebrow": {"family": "Inter", "weight": 600, "size": "11-12px", "case": "uppercase", "tracking": "0.12em", "color": "#128461"}
+  },
+  "logos": {
+    "files": {
+      "color": {"path": "logos/cato_logo_rgb_color_art_101.svg", "sha256": "63d48dabae6e7ba66f5d6db207c853974b8e4716c60c5f17d68253c5322578b5", "use": "Preferred mark on light, neutral backgrounds"},
+      "black": {"path": "logos/cato_logo_rgb_black_art_101.svg", "sha256": "d9bfc694198bed006f4aa05532919af06833fee7ebef8bfda1d4e3bdfe896c84", "use": "When color reproduction is unavailable"},
+      "white": {"path": "logos/cato_logo_rgb_white_art_101.svg", "sha256": "bb0ba25208097457fcec91ac9672458b547443505d7a0b5f60d5dd47010134eb", "use": "On Cato Green, dark green, black and imagery"}
+    },
+    "aspectRatio": 2.5535,
+    "rules": [
+      "Use only official artwork. Do not redraw, recolor, distort, rotate or separate the logo elements.",
+      "Give the mark clear space so it stays recognizable at every size.",
+      "Color or black mark on light surfaces; white mark on dark surfaces."
+    ]
+  },
+  "ring": {
+    "forms": {
+      "solidDisc": "Boldest expression; a clear focal point.",
+      "openRing": "Foundational form; connection, continuity and the unified platform.",
+      "doubleRing": "Inner ring is the customer's network; outer ring is the protection Cato provides.",
+      "concentricRings": "Movement, energy and scale; each ring reflects a core pillar."
+    },
+    "rules": [
+      "Flat 2D only. The dimensional 3D ring treatment is retired.",
+      "Most recognizable in Cato Green; use it as a focal point, frame or backdrop, with restraint.",
+      "The Ring may frame, crop or silhouette relevant imagery while its silhouette stays recognizable."
+    ]
+  },
+  "iconography": {
+    "primary": "outline",
+    "grid": 24,
+    "strokeWidth": 2,
+    "lineCap": "round",
+    "lineJoin": "round",
+    "rules": [
+      "Outline icons are the primary treatment for diagrams, editorial content and product explanations.",
+      "Solid icons only to give one idea more weight; not a second default set.",
+      "Isometric illustration only for architecture and relationships, never as a substitute for simple icons.",
+      "Icons are conceptual; they are not product marks or evidence of a specific feature or commitment."
+    ]
+  },
+  "photography": [
+    "Authentic, human, contemporary; avoid staged, generic or traditional stock compositions.",
+    "Create a clear focal point with selective focus and thoughtful composition.",
+    "Use perspective, scale and sightlines to express clarity.",
+    "Abstract movement imagery (connectivity, light, data) instead of familiar cyber clichés."
+  ],
+  "designPrinciples": [
+    {"name": "Reveal what matters", "rule": "Use hierarchy, contrast, layering and space to make the primary message immediately clear."},
+    {"name": "Connect ideas", "rule": "Show relationships through grouping, proximity, pathways and framing. Visuals add meaning, not decoration."},
+    {"name": "Resolve with clarity", "rule": "Use grids, alignment, containment and precision to guide toward a clear takeaway or action."}
+  ],
+  "voice": {
+    "summary": "Clear, confident and human: clarity without simplification, intelligence without ego, confidence without alarm, authority without corporate stiffness.",
+    "principles": [
+      {"name": "Clear, not complicated", "rule": "Plain language, strong hierarchy and a clear point over showing how technical we can be."},
+      {"name": "Calmly confident", "rule": "No fear or drama. Focus on what people can understand, control and do next."},
+      {"name": "Smart and decisive", "rule": "Explain what it means and what to do next, with a clear point of view."},
+      {"name": "Human and conversational", "rule": "Write for people, not at them, in natural language."}
+    ],
+    "personality": ["Calmly brilliant", "Confidently candid", "Warmly human"],
+    "standards": {
+      "style": "The Chicago Manual of Style",
+      "dictionary": "Merriam-Webster's Collegiate Dictionary",
+      "locale": "en-US",
+      "precedence": "Cato conventions first; Chicago for style and usage; Merriam-Webster for spelling."
+    },
+    "avoidAlarm": ["catastrophic", "devastating", "nightmare", "terrifying", "terrified", "scary", "panic", "doom", "apocalypse", "cyber apocalypse", "lurking", "ticking time bomb", "wreak havoc", "cripple", "crippling", "under siege"],
+    "avoidHype": ["game-changer", "game-changing", "revolutionary", "best-in-class", "world-class", "cutting-edge", "next-gen", "bleeding-edge", "synergy", "paradigm shift", "silver bullet"]
+  },
+  "productNames": [
+    {"correct": "Cato SASE Platform", "incorrect": ["Cato SASE Cloud Platform"]},
+    {"correct": "Cato SSE 360", "incorrect": []},
+    {"correct": "Cato Socket", "incorrect": [], "note": "Adding SD-WAN is acceptable."},
+    {"correct": "Cato Client", "incorrect": ["Cato Client ZTNA", "Cato Universal ZTNA Client"]},
+    {"correct": "Cato XDR", "incorrect": []},
+    {"correct": "Cato Network Stories for XDR", "incorrect": ["Cato XDR Network Stories"]},
+    {"correct": "Cato FWaaS", "incorrect": []},
+    {"correct": "Cato PoPs", "incorrect": []},
+    {"correct": "Cato SWG", "incorrect": []},
+    {"correct": "Cato IPS", "incorrect": []},
+    {"correct": "Cato NGAM", "incorrect": []},
+    {"correct": "Cato DNS Security", "incorrect": []},
+    {"correct": "Cato RBI", "incorrect": []},
+    {"correct": "Cato CASB", "incorrect": []},
+    {"correct": "Cato DLP", "incorrect": []},
+    {"correct": "Cato Management Application (CMA)", "incorrect": []},
+    {"correct": "Cato Endpoint Protection (EPP)", "incorrect": []},
+    {"correct": "Cato vSocket", "incorrect": []},
+    {"correct": "Cato Single Pass Cloud Engine (SPACE)", "incorrect": []},
+    {"correct": "Cloud Interconnect", "incorrect": ["Cross Connect"]},
+    {"correct": "Cato Edge SD-WAN", "incorrect": []},
+    {"correct": "Cato DEM", "incorrect": []},
+    {"correct": "Cato IoT/OT Security", "incorrect": []},
+    {"correct": "Cato Safe TLSi", "incorrect": []}
+  ],
+  "productNameNotes": [
+    "The hub also lists bare 'Cato SASE' as incorrect where the platform is meant; use 'Cato SASE Platform'. The linter flags it for review rather than blocking, because 'Cato SASE' can appear legitimately inside longer phrases.",
+    "Validate current product and component names with Product Marketing before customer-facing or contractual use."
+  ]
+}

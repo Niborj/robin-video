@@ -1,0 +1,11 @@
+# OS and Python clutter
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+
+# Generated locally, not part of the skill source
+robin-video-output/
+test-runs/
+dist/
+robin-video-music-sampler.mp3

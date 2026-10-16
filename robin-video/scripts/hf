@@ -1,0 +1,18 @@
+#!/bin/sh
+# Robin-Video wrapper for the pinned HyperFrames CLI. Uses npx; if the default npm cache is not writable
+# (root-owned files in ~/.npm cause EACCES), it falls back to a private cache in ~/.cache/robin-video/npm.
+HF_VERSION="${ROBIN_VIDEO_HYPERFRAMES:-0.8.162}"
+export HYPERFRAMES_SKIP_SKILLS=1
+if [ -z "$npm_config_cache" ]; then
+  if [ -d "$HOME/.npm" ] && find "$HOME/.npm" -maxdepth 3 ! -user "$(id -u)" 2>/dev/null | head -1 | grep -q .; then
+    export npm_config_cache="$HOME/.cache/robin-video/npm"
+  elif [ -d "$HOME/.cache/robin-video/npm/_npx" ]; then
+    export npm_config_cache="$HOME/.cache/robin-video/npm"
+  fi
+fi
+[ -n "$npm_config_cache" ] && mkdir -p "$npm_config_cache"
+# Snapshots never send frames to a third-party vision service unless the caller asks for --describe explicitly.
+if [ "$1" = "snapshot" ]; then
+  case " $* " in *" --describe"*) ;; *) set -- "$@" --describe false ;; esac
+fi
+exec npx --yes "hyperframes@${HF_VERSION}" "$@"
